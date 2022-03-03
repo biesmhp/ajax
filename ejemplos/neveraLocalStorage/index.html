@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="master.css">
   </head>
   <body>
+    <img id="imgAbierta" src="img/nevera_abierta.png" alt="nevera abierta" width="100" hidden>
+    <img id="imgCerrada" src="img/nevera_cerrada.png" alt="nevera abierta" width="200">
     <form method="post">
       <button type="button" id="btnGuardar">Guardar</button>
       <button type="button" id="btnQuitar">Sacar</button>
       <fieldset>
-        <legend>Guardar</legend>
+        <legend>Nevera</legend>
         <div id="listProductos">--Productos--</div>
-        <button type="button" id="btnMeter">Guardar</button>
+        <button type="button" id="btnMeter">Llenar nevera</button>
+        <button type="button" id="btnSacar" hidden>Sacar de la nevera</button>
       </fieldset>
     </form>
   </body>
