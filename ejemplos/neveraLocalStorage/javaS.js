@@ -4,11 +4,11 @@ function inicio() {
   // Array de productos
   var arrProductos = ["leche","agua","zumo","yogures","mantequilla","verduras","queso","jamón","pescado","carne"];
 
-  btnSacarProductos = document.querySelector("#btnSacar");
+  btnSacarProductos = document.querySelector("#btnQuitar");
   btnSacarProductos.addEventListener('click',guiSacar,false);
 
   generarLista(arrProductos);
-  
+
   btnMeterProductos = document.querySelector("#btnMeter");
   btnMeterProductos.addEventListener('click',meterProductos,false);
 }
