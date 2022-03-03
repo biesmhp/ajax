@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="javaS.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <main>
+      <h1>Elija su menú</h1>
+      <table border="1" class="even">
+        <tr>
+          <th>Platos</th>
+          <th>Cantidad</th>
+          <th>Subtotales</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>Pizza cuatro estaciones</td>
+          <td><input type="text" size="3" class="soloNumber"></td>
+          <td>*6,5</td>
+          <td><input type="text" value="0" size="3" class="soloNumber" readonly></td>
+        </tr>
+        <tr>
+          <td>Tortellini</td>
+          <td><input type="text" size="3" class="soloNumber"></td>
+          <td>*16,5</td>
+          <td><input type="text" value="0" size="3" readonly></td>
+        </tr>
+        <tr>
+          <td>Lasagna</td>
+          <td><input type="text" size="3" class="soloNumber"></td>
+          <td>*12,5</td>
+          <td><input type="text" value="0" size="3" class="soloNumber" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="alignDerecho">Total:</td>
+          <td><input type="text" size="5" class="soloNumber" readonly></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <b>Forma de pago:</b> <span>Visa</span><input type="radio" name="pago" checked> <span>Mastercard</span><input type="radio" name="pago"> <span>Transferencia</span><input type="radio" name="pago">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" class="alignCentro"><button type="button">Registrar</button><button type="button">Borrar datos</button></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

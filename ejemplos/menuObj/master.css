@@ -1,0 +1,25 @@
+body{
+  background-color: #CCCCCC;
+  /*flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  background-color: #AAAAAA;
+  padding: 15px;
+}
+.alignDerecho {
+  text-align: right;
+}
+.alignCentro {
+  text-align: center;
+}
+/* Colores por pares */
+table.even{
+  background-color: #CCCCCC;
+	border-collapse:collapse;
+}
+table.even tr:nth-child(2n+2){
+	background-color: #DDDDDD;
+}
