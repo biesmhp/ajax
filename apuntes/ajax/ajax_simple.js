@@ -23,3 +23,12 @@ xhttp.onload = function() {
 // Send a request
 xhttp.open("GET", "ajax_info.txt");
 xhttp.send();
+
+// To add information into the GET
+xhttp.open("GET", "demo_get2.asp?fname=Henry&lname=Ford");
+xhttp.send();
+
+// For POST request
+xhttp.open("POST", "ajax_test.asp");
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("fname=Henry&lname=Ford"); 
