@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="../css/master.css">
+    <script src="cookies.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Prueba</h1>
+      <form method="post">
+        <fieldset>
+          <legend>Crear una cookie</legend>
+          <input type="text" id="inpNombreSet" placeholder="Nombre">
+          <input type="text" id="inpValor" placeholder="Valor">
+          <button type="button" id="btnSetCookie">Crear cookie</button>
+        </fieldset>
+        <fieldset>
+          <legend>Ver cookies</legend>
+          <input type="text" id="inpNombreGet" placeholder="Nombre">
+          <button type="button" id="btnGetCookie">Valor cookie</button>
+          <button type="button" id="btnAllCookies">Todas</button>
+        </fieldset>
+        <fieldset>
+          <legend>Eliminar cookies</legend>
+          <input type="text" id="inpNombreDel" placeholder="Nombre">
+          <button type="button" id="btnDelCookie">Borrar cookie</button>
+          <button type="button" id="btnDelAllCookies">Borrar todas</button>
+        </fieldset>
+      </form>
+      <p id="visualizar"></p>
+    </main>
+  </body>
+</html>

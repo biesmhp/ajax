@@ -7,7 +7,7 @@ function loadDoc() {
       this.responseText;
     }
   };
-  xhttp.open("GET", "ajax_info.txt");
+  xhttp.open("GET", "ajax_info.md");
   xhttp.send();
 }
 
@@ -21,7 +21,7 @@ xhttp.onload = function() {
 }
 
 // Send a request
-xhttp.open("GET", "ajax_info.txt");
+xhttp.open("GET", "ajax_info.md");
 xhttp.send();
 
 // To add information into the GET
@@ -31,4 +31,4 @@ xhttp.send();
 // For POST request
 xhttp.open("POST", "ajax_test.asp");
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xhttp.send("fname=Henry&lname=Ford"); 
+xhttp.send("fname=Henry&lname=Ford");
