@@ -26,6 +26,7 @@ main {
   padding: 10px;
   text-align: center;
   border-radius: 14px;
+  max-width: 600px;
 }
 form {
   border-radius: 14px;
@@ -72,8 +73,8 @@ button {
   margin-bottom: 5px;
 }
 p {
-  font-weight: bold;
-  color: var(--text-primary)
+  font-weight: normal;
+  color: var(--text-secondary)
 }
 button {
   padding: 5px;

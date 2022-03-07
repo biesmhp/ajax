@@ -10,20 +10,17 @@
     <main>
       <h1>Local Storage</h1>
       <form method="post">
-        <input type="text" placeholder="Local Storage">
-        <button type="button" id="btnAddLocal">Añadir al almacenamiento local</button>
+        <input type="text" id="inpKLocal" placeholder="Key">
+        <button type="button" id="btnVerLocalKey">Ver valor por key/clave</button>
         <button type="button" id="btnDelLocal">Eliminar del almacenamiento local</button>
+        <input type="text" id="inpVLocal" placeholder="Value">
+        <button type="button" id="btnAddLocal">Añadir al almacenamiento local</button>
+        <button type="button" id="btnDelAllLocal">Eliminar TODO el almacenamiento local</button>
         <button type="button" id="btnVerLocal">Ver el almacenamiento local</button>
         <p id="visLocalStorage"></p>
       </form>
       <h1>Session Storage</h1>
-      <form method="post">
-        <input type="text" placeholder="Session Storage">
-        <button type="button" id="btnAddSession">Añadir al almacenamiento sesión</button>
-        <button type="button" id="btnDelSession">Eliminar del almacenamiento sesión</button>
-        <button type="button" id="btnVerSesion">Ver el almacenamiento sesión</button>
-        <p id="visSessionStorage"></p>
-      </form>
+      <p>SessionStorage contiene exactamente los mismos métodos que LocalStorage, pero solo se almacenen mientras mantengas el navegador abierto.</p>
     </main>
   </body>
 </html>
