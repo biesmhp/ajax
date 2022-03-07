@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function upSize() {
+        let seccion = document.getElementById("seccion1");
+        seccion.style.fontSize = "larger";
+        console.log("hola");
+      }
+      function downSize() {
+        let seccion = document.getElementById("seccion1");
+        seccion.style.fontSize = "smaller";
+        console.log("hola");
+      }
+      function originalSize() {
+        let seccion = document.getElementById("seccion1");
+        seccion.style.fontSize = "initial";
+        console.log("hola");
+      }
+      function changeBC() {
+        let seccion = document.getElementById("seccion1");
+        let color = prompt("Introduce un color en hexadecimal: #AA00FF");
+        seccion.style.background = color;
+      }
+      function originalBC() {
+        let seccion = document.getElementById("seccion1");
+        seccion.style.background = "white";
+      }
+    </script>
+    <link rel="stylesheet" href="master6.css">
+  </head>
+  <body>
+    <div>
+      <button type="button" id="btnUpSize" onclick="upSize()">Aumentar tamaño de fuente</button>
+      <button type="button" id="btnDownSize" onclick="downSize()">Disminuir tamaño de fuente</button>
+      <button type="button" id="btnOriginalSize" onclick="originalSize()">Restaurar</button>
+    </div>
+    <div>
+      <button type="button" id="btnChangeBackColor" onclick="changeBC()">Cambiar color de fondo</button>
+      <button type="button" id="btnOriginalBackColor" onclick="originalBC()">Restaurar</button>
+    </div>
+    <section id="seccion1">
+      <p>Texto de prueba 1.</p>
+    </section>
+    <section id="seccion2">
+      <p>Otro texto de prueba, versión 2.</p>
+    </section>
+
+  </body>
+</html>
