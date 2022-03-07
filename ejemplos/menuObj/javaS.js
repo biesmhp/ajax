@@ -21,11 +21,11 @@ function inicio() {
   // Crear objeto
   evento = document.querySelector("#btnRegistrar")
   evento.addEventListener('click',function () {
-    //
+    // Recogemos las variables
     let pizza = document.querySelector("#inpPizza")
     let tortellini = document.querySelector("#inpTortellini")
     let lasagna = document.querySelector("#inpLasagna")
-    let arrPedido = [pizza.value,tortellini.value,lasagna.value]
+    let arrPedido = [["pizza",parseInt(pizza.value)],["tortellini",parseInt(tortellini.value)],["lasagna",parseInt(lasagna.value)]]
     // console.log(arrPedido);
     let modoPago = document.querySelectorAll("[name='pago']")
     let metodoPago = "contrarrembolso"
@@ -34,18 +34,18 @@ function inicio() {
         metodoPago = modoPago[i].value;
       }
     }
-    console.log(metodoPago);
-    // pedidosobj1 = new Pedidosobj(arrPedido)
-    // console.log({pedidosobj1});
+    // console.log(metodoPago);
+    pedidosobj1 = new Pedidosobj(arrPedido,metodoPago)
+    console.log({pedidosobj1});
   },false)
 }
 
 function soloNumeros(e) {
   if (e.keyCode >= 48 && e.keyCode <= 57) {
     // Números del 0 al 9
+    return true
   } else {
     e.preventDefault()
     return false
   }
-  return true
 }

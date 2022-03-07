@@ -2,11 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>local y session Storage</title>
+    <title>Local y Session Storage</title>
     <link rel="stylesheet" href="../css/master.css">
     <script src="storage.js" charset="utf-8"></script>
   </head>
   <body>
-
+    <main>
+      <h1>Local Storage</h1>
+      <form method="post">
+        <input type="text" placeholder="Local Storage">
+        <button type="button" id="btnAddLocal">Añadir al almacenamiento local</button>
+        <button type="button" id="btnDelLocal">Eliminar del almacenamiento local</button>
+        <button type="button" id="btnVerLocal">Ver el almacenamiento local</button>
+        <p id="visLocalStorage"></p>
+      </form>
+      <h1>Session Storage</h1>
+      <form method="post">
+        <input type="text" placeholder="Session Storage">
+        <button type="button" id="btnAddSession">Añadir al almacenamiento sesión</button>
+        <button type="button" id="btnDelSession">Eliminar del almacenamiento sesión</button>
+        <button type="button" id="btnVerSesion">Ver el almacenamiento sesión</button>
+        <p id="visSessionStorage"></p>
+      </form>
+    </main>
   </body>
 </html>
