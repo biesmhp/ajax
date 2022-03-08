@@ -36,6 +36,10 @@ form {
   align-items: center;
   flex-flow: column;
 }
+.lateral {
+  display: flex;
+  flex-flow: row;
+}
 fieldset {
   margin-bottom: 30px;
   color: var(--text-primary);
