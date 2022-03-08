@@ -1,10 +1,26 @@
 addEventListener('load',inicio,false)
 function inicio() {
+  evento = document.querySelector("#inpInicial")
+  evento.addEventListener('keypress',function (e) {
+    soloNumeros(e)
+  },false)
+
   evento = document.querySelector("#btnConvertir")
   evento.addEventListener('click',function () {
-    let
-    console.log(document.querySelector("#inpInicial").value);
-  })
+    let valorInicial = document.querySelector("#inpInicial").value
+    let unidadInicial = document.querySelector("#selInicial").value
+    console.log(unidadInicial);
+  },false)
+}
+
+function soloNumeros(e) {
+  if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode == 44) {
+    // Números del 0 al 9
+    return true
+  } else {
+    e.preventDefault()
+    return false
+  }
 }
 // Cantidad = la cantidad (en unidades de tiempo o milisegundos)
 // Unidad = El tipo de unidad introducido o al que queremos convertir los Milisegundos ('se','mi','ho','di')
