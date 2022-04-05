@@ -18,11 +18,11 @@ function inicio() {
 }
 
 function soloLetras(e) {
-  if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 209 || e.keyCode == 193 || e.keyCode == 201 || e.keyCode == 205 || e.keyCode == 211 || e.keyCode == 218) {
-    // Mayúsculas, +Ñ +Á +É +Í +Ó +Ú
+  if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 209 || e.keyCode == 193 || e.keyCode == 201 || e.keyCode == 205 || e.keyCode == 211 || e.keyCode == 218|| e.keyCode == 220) {
+    // Mayúsculas, +Ñ +Á +É +Í +Ó +Ú +Ü
     return true
-  } else if (e.keyCode >= 97 && e.keyCode <= 122 || e.keyCode == 241 || e.keyCode == 225 || e.keyCode == 233 || e.keyCode == 237 || e.keyCode == 243 || e.keyCode == 250) {
-    // Minúsculas, +ñ +á +é +í +ó +ú
+  } else if (e.keyCode >= 97 && e.keyCode <= 122 || e.keyCode == 241 || e.keyCode == 225 || e.keyCode == 233 || e.keyCode == 237 || e.keyCode == 243 || e.keyCode == 250|| e.keyCode == 252) {
+    // Minúsculas, +ñ +á +é +í +ó +ú +ü
     return true
   } else {
     e.preventDefault()
