@@ -18,8 +18,12 @@ body {
   background-color: var(--bg-secondary);
   /*flexbox*/
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
+}
+span {
+  margin: 10px;
 }
 main {
   background-color: var(--bg-primary);
@@ -35,16 +39,20 @@ form {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  background-color: var(--bg-primary);
+  padding: 5px;
 }
 .lateral {
   display: flex;
   flex-flow: row;
 }
 fieldset {
+  display: flex;
+  flex-flow: row;
   margin-bottom: 30px;
   color: var(--text-primary);
-  border-top-left-radius: inherit;
-  border-bottom-right-radius: inherit;
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 input {
   border: 0;
@@ -63,7 +71,7 @@ input {
   background-color: var(--bg-terciary);
 }
 input:focus{
-  width: 100%;
+  /* width: 100%; */
   border-color: var(--color-1);
   border-width: thin;
 }
@@ -78,7 +86,8 @@ button {
 }
 p {
   font-weight: normal;
-  color: var(--text-secondary)
+  color: var(--text-secondary);
+  flex-flow: row;
 }
 button {
   padding: 5px;
@@ -89,6 +98,7 @@ button {
   font-size: 16px;
   transition: 0.25s;
   outline: none;
+  margin: 10px;
 }
 button:focus, button:hover {
   background-color: var(--color-2);
@@ -96,4 +106,18 @@ button:focus, button:hover {
 textarea {
   background-color: var(--bg-terciary);
   color: var(--text-primary);
+  text-align: center;
+}
+select {
+  background-color: var(--color-4);
+  color: var(--bg-primary);
+  border-radius: 6px;
+  border-style: none;
+  outline: none;
+  width: 50%;
+  font-size: 16px;
+  align-self: center;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10px;
 }

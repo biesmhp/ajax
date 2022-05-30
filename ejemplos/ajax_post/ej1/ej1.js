@@ -52,13 +52,14 @@ function extraeXML() {
     xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
   }
   xhr2.open("GET", "comentarios.xml", true);
-  xhr2.send(null);
+  xhr2.send();
   xhr2.onreadystatechange = muestracontenido2;
 }
 
 function muestracontenido2() {
   if (xhr2.readyState==4 && xhr2.status==200) {
     let textoXML=xhr2.responseXML;
+    console.log(xhr2.responseXML);
     let nombre=textoXML.querySelectorAll("nombre");
     let edad=textoXML.querySelectorAll("edad");
     let dni=textoXML.querySelectorAll("dni");
