@@ -8,8 +8,8 @@ function inicio() {
     // Create an XMLHttpRequest object
     xhttp = new XMLHttpRequest()
 
-    // FormData
-    let fichero = "ej2.php"
+    // FormData GET
+    let fichero = "meses.php"
     let url = `${fichero}?q=${valorCaja1}`
 
     // Send a request
