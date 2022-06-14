@@ -10,8 +10,32 @@ function inicio() {
   // evento.addEventListener('click',function (e) {
   //
   // },false)
+  
 }
 
+// Para visualizar un array u objeto bidimensional
+function addTable(arr,objetivo,id) {
+  let table = document.createElement("table")
+  arguments.length == 3 ? select.setAttribute("id",id) : null
+  for (var i = 0; i < arr.length; i++) {
+    let linea = document.createElement("tr")
+    linea.setAttribute("value",i)
+    linea.setAttribute("label",arr[i])
+    let columna = document.createElement("td")
+    columna.setAttribute("value",i)
+    columna.setAttribute("label",`${arr[i]}`)
+    columna.setAttribute("class","opcionSelect")
+    linea.appendChild(columna)
+    table.appendChild(linea)
+  }
+  // for (let y = 0; y < arr.length; y++) {
+  //
+  // }
+  objetivo.appendChild(table)
+  return objetivo ? true : false
+}
+
+// Para mostrar un select con las opciones escogidas
 function addSelect(arr,objetivo,id) {
   let select = document.createElement("select")
   arguments.length == 3 ? select.setAttribute("id",id) : null
@@ -26,6 +50,7 @@ function addSelect(arr,objetivo,id) {
   return objetivo ? true : false
 }
 
+// Para añadir un tipo de input
 function addInput(tipo,objetivo,id) {
   let input = document.createElement("input")
   arguments.length == 3 ? input.setAttribute("id",id) : null
@@ -44,6 +69,18 @@ function addInput(tipo,objetivo,id) {
   }
   objetivo.appendChild(input)
   return objetivo ? true : false
+}
+
+class Prueba {
+  constructor(tipo, descripcion, precio) {
+    this.tipo = tipo
+    this.descripcion = descripcion
+    this.precio = precio
+  }
+
+  toString() {
+    return `Tipo: ${this.tipo}, descripción: ${this.descripcion} y precio: ${this.precio}\n`
+  }
 }
 
 class Articulo {
