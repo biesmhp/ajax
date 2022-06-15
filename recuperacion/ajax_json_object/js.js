@@ -15,9 +15,9 @@ let animales = [perro,conejo]
 function inicio() {
   //
   let cajaDatosNode = document.querySelector(".inpDatos")
-  addSelect(arrCategoria,cajaDatosNode,"selCategoria")
-  addInput("text",cajaDatosNode,"btnEnviar")
-  addTable([conejo],cajaDatosNode,"tableDatosAnimal")
+  // addSelect(arrCategoria,cajaDatosNode,"selCategoria")
+  // addInput("text",cajaDatosNode,"btnEnviar")
+  addTable(animales,cajaDatosNode,"tableDatosAnimal")
   // evento = document.querySelector("#btnEnviar")
   // evento.addEventListener('click',function (e) {
   //
@@ -27,6 +27,7 @@ function inicio() {
 
 // Para visualizar un array de objetos
 function addTable(arr,objetivo,id) {
+  document.querySelector(`#${id}`) ? document.querySelector(`#${id}`).innerHTML = '' : null
   let table = document.createElement("table")
   arguments.length == 3 ? table.setAttribute("id",id) : null
   table.appendChild(addCabecera(arr[0]))
@@ -35,7 +36,8 @@ function addTable(arr,objetivo,id) {
       table.appendChild(addLineaDatos(item))
     })
   objetivo.appendChild(table)
-  return objetivo ? true : false
+  // console.log(document.querySelector(`#${id}`))
+  return
 }
 
 function addCabecera(obj) {
@@ -45,7 +47,7 @@ function addCabecera(obj) {
   for (var propiedad in obj) {
     let opcionCabecera = document.createElement("th")
     opcionCabecera.setAttribute("id",`idCabecera${propiedad}`)
-    let opcionCabeceraText = document.createTextNode(propiedad)
+    let opcionCabeceraText = document.createTextNode(propiedad.toUpperCase())
     opcionCabecera.appendChild(opcionCabeceraText)
     lineaCabecera.appendChild(opcionCabecera)
   }

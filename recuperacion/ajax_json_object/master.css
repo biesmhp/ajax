@@ -129,3 +129,16 @@ select {
 .inpDatos {
   display: flex;
 }
+.lineaDatos:hover {
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-secondary);
+  background-color: var(--bg-terciary);
+}
+.lineaCabecera {
+  margin: auto;
+}
+/* td {
+  background-color: inherit;
+  font-weight: inherit;
+} */
