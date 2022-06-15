@@ -14,14 +14,25 @@ let animales = [perro,conejo]
 
 function inicio() {
   //
-  let cajaDatosNode = document.querySelector(".inpDatos")
+  let cajaDatosNode = document.querySelector("#inpDatos")
   evento = document.querySelector("#btnEnviar")
   evento.addEventListener('click',function (e) {
-    // addTable(animales,cajaDatosNode,"tableDatosAnimal")
-    // addSelect(arrCategoria,cajaDatosNode,"selCategoria")
-    addInput("text",cajaDatosNode,"inpText")
+    // addTable(animales,cajaDatosNode,"tablaAnimales")
+    addSelect(arrCategoria,cajaDatosNode,"selCategoria")
+    // addInput("date",cajaDatosNode,"inpFecha1")
+    // addInput("date",cajaDatosNode,"inpFecha2")
   },false)
 
+  evento = document.querySelector("#btnApretar")
+  evento.addEventListener('click',function (e) {
+    // addTable(animales,cajaDatosNode,"tablaAnimales")
+    // addSelect(arrCategoria,cajaDatosNode,"selCategoria")
+    addInput("date",cajaDatosNode,"inpFecha1")
+    addInput("date",cajaDatosNode,"inpFecha2")
+    addInput("date",cajaDatosNode,"inpFecha3")
+    addInput("date",cajaDatosNode,"inpFecha4")
+    addInput("date",cajaDatosNode,"inpFecha5")
+  },false)
 }
 
 // Para visualizar un array de objetos
@@ -97,7 +108,7 @@ function addInput(tipo,objetivo,id) {
   }
   arguments.length == 3 ? input.setAttribute("id",id) : null
   input.setAttribute("type",tipo)
-  input.setAttribute("class","input")
+  input.setAttribute("class",`input${tipo.trim().replace(/^\w/, (c) => c.toUpperCase())}`)
   switch (true) {
     case tipo=="number":
       input.setAttribute("min",0)
@@ -105,6 +116,11 @@ function addInput(tipo,objetivo,id) {
     break;
     case tipo=="button":
       input.setAttribute("value","boton")
+    break;
+    case tipo=="text":
+      input.setAttribute("placeholder","Introduce texto")
+    break;
+    case tipo=="date":
     break;
     default:
       input.setAttribute("placeholder","Introduce texto")
