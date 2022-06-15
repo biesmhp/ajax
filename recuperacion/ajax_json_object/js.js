@@ -15,20 +15,22 @@ let animales = [perro,conejo]
 function inicio() {
   //
   let cajaDatosNode = document.querySelector(".inpDatos")
-  // addSelect(arrCategoria,cajaDatosNode,"selCategoria")
-  // addInput("text",cajaDatosNode,"btnEnviar")
-  addTable(animales,cajaDatosNode,"tableDatosAnimal")
-  // evento = document.querySelector("#btnEnviar")
-  // evento.addEventListener('click',function (e) {
-  //
-  // },false)
+  evento = document.querySelector("#btnEnviar")
+  evento.addEventListener('click',function (e) {
+    // addTable(animales,cajaDatosNode,"tableDatosAnimal")
+    // addSelect(arrCategoria,cajaDatosNode,"selCategoria")
+    addInput("text",cajaDatosNode,"inpText")
+  },false)
 
 }
 
 // Para visualizar un array de objetos
 function addTable(arr,objetivo,id) {
-  document.querySelector(`#${id}`) ? document.querySelector(`#${id}`).innerHTML = '' : null
-  let table = document.createElement("table")
+  let table = document.querySelector(`#${id}`) ? document.querySelector(`#${id}`) : document.createElement("table")
+  while (table.firstChild) {
+    table.removeChild(table.lastChild);
+  }
+  // let table = document.createElement("table")
   arguments.length == 3 ? table.setAttribute("id",id) : null
   table.appendChild(addCabecera(arr[0]))
   arr.forEach((item, i) =>
@@ -37,7 +39,7 @@ function addTable(arr,objetivo,id) {
     })
   objetivo.appendChild(table)
   // console.log(document.querySelector(`#${id}`))
-  return
+  return table
 }
 
 function addCabecera(obj) {
@@ -71,7 +73,10 @@ function addLineaDatos(obj) {
 
 // Para mostrar un select con las opciones escogidas
 function addSelect(arr,objetivo,id) {
-  let select = document.createElement("select")
+  let select = document.querySelector(`#${id}`) ? document.querySelector(`#${id}`) : document.createElement("select")
+  while (select.firstChild) {
+    select.removeChild(select.lastChild)
+  }
   arguments.length == 3 ? select.setAttribute("id",id) : null
   for (let i = 0; i < arr.length; i++) {
     let opcion = document.createElement("option")
@@ -86,7 +91,10 @@ function addSelect(arr,objetivo,id) {
 
 // Para añadir un tipo de input
 function addInput(tipo,objetivo,id) {
-  let input = document.createElement("input")
+  let input = document.querySelector(`#${id}`) ? document.querySelector(`#${id}`) : document.createElement("input")
+  while (input.firstChild) {
+    input.removeChild(input.lastChild)
+  }
   arguments.length == 3 ? input.setAttribute("id",id) : null
   input.setAttribute("type",tipo)
   input.setAttribute("class","input")
