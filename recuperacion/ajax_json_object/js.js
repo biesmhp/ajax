@@ -1,38 +1,70 @@
 addEventListener('load',inicio,false)
 let arrCategoria = ['Hogar','Calzado','Ropa','Accesorios']
+let perro = {
+  especie: 'perro',
+  tamano: 'mediano',
+  precio: 25.2,
+}
+let conejo = {
+  especie: 'conejo',
+  tamano: 'pequeño',
+  precio: 65.90,
+}
+let animales = [perro,conejo]
 
 function inicio() {
   //
   let cajaDatosNode = document.querySelector(".inpDatos")
   addSelect(arrCategoria,cajaDatosNode,"selCategoria")
   addInput("text",cajaDatosNode,"btnEnviar")
+  addTable([conejo],cajaDatosNode,"tableDatosAnimal")
   // evento = document.querySelector("#btnEnviar")
   // evento.addEventListener('click',function (e) {
   //
   // },false)
-  
+
 }
 
-// Para visualizar un array u objeto bidimensional
+// Para visualizar un array de objetos
 function addTable(arr,objetivo,id) {
   let table = document.createElement("table")
-  arguments.length == 3 ? select.setAttribute("id",id) : null
-  for (var i = 0; i < arr.length; i++) {
-    let linea = document.createElement("tr")
-    linea.setAttribute("value",i)
-    linea.setAttribute("label",arr[i])
-    let columna = document.createElement("td")
-    columna.setAttribute("value",i)
-    columna.setAttribute("label",`${arr[i]}`)
-    columna.setAttribute("class","opcionSelect")
-    linea.appendChild(columna)
-    table.appendChild(linea)
-  }
-  // for (let y = 0; y < arr.length; y++) {
-  //
-  // }
+  arguments.length == 3 ? table.setAttribute("id",id) : null
+  table.appendChild(addCabecera(arr[0]))
+  arr.forEach((item, i) =>
+    {
+      table.appendChild(addLineaDatos(item))
+    })
   objetivo.appendChild(table)
   return objetivo ? true : false
+}
+
+function addCabecera(obj) {
+  // Crear la cabecera de los datos
+  let lineaCabecera = document.createElement("tr")
+  lineaCabecera.setAttribute("class","lineaCabecera")
+  for (var propiedad in obj) {
+    let opcionCabecera = document.createElement("th")
+    opcionCabecera.setAttribute("id",`idCabecera${propiedad}`)
+    let opcionCabeceraText = document.createTextNode(propiedad)
+    opcionCabecera.appendChild(opcionCabeceraText)
+    lineaCabecera.appendChild(opcionCabecera)
+  }
+  return lineaCabecera
+}
+
+function addLineaDatos(obj) {
+  // Crear la visualización de los datos
+  let lineaDatos = document.createElement("tr")
+  lineaDatos.setAttribute("class","lineaDatos")
+  for (let propiedad in obj) {
+    if (obj.hasOwnProperty(propiedad)) {
+      let dato = document.createElement("td")
+      let datoText = document.createTextNode(obj[propiedad])
+      dato.appendChild(datoText)
+      lineaDatos.appendChild(dato)
+    }
+  }
+  return lineaDatos
 }
 
 // Para mostrar un select con las opciones escogidas
@@ -69,18 +101,6 @@ function addInput(tipo,objetivo,id) {
   }
   objetivo.appendChild(input)
   return objetivo ? true : false
-}
-
-class Prueba {
-  constructor(tipo, descripcion, precio) {
-    this.tipo = tipo
-    this.descripcion = descripcion
-    this.precio = precio
-  }
-
-  toString() {
-    return `Tipo: ${this.tipo}, descripción: ${this.descripcion} y precio: ${this.precio}\n`
-  }
 }
 
 class Articulo {
