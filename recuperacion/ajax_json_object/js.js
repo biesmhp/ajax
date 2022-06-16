@@ -44,6 +44,15 @@ function inicio() {
       document.querySelector("#visualizado").innerHTML = calendar(new Date(fecha1Node.value))
     },false)
   },false)
+
+  evento = document.querySelector("#btnLanzar")
+  evento.addEventListener('click', function (e) {
+    localStorage.getItem("myTime") == undefined ? localStorage.setItem("myTime",Date.now()) : false
+    let primerClick = localStorage.getItem("myTime")
+    console.log(typeof primerClick);
+    let fechaPrimerClick = new Date(parseInt(primerClick)).toLocaleString()
+    console.log(fechaPrimerClick);
+  },false)
 }
 
 // Para visualizar un array de objetos
@@ -139,6 +148,20 @@ function addInput(tipo,objetivo,id,valor) {
   }
   objetivo.appendChild(input)
   return input
+}
+
+function mostrar(aMostrar,objetivo,sobreescribir) {
+  // console.log(texto);
+  if (objetivo.tagName=="INPUT") {
+    sobreescribir ? objetivo.value = aMostrar : objetivo.value += aMostrar
+  }else if (Array.isArray(aMostrar)) {
+    sobreescribir ? objetivo.innerText = '' : objetivo.innerText += '\n'
+    for (var i = 0; i < aMostrar.length; i++) {
+      objetivo.innerText += `${aMostrar[i]}\n`;
+    }
+  }else{
+    sobreescribir ? objetivo.innerHTML = aMostrar : objetivo.innerHTML += aMostrar
+  }
 }
 
 class Articulo {
