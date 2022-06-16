@@ -83,3 +83,8 @@ nav input[type="button"]:hover {
   color: var(--color-3);
   font-weight: bold;
 }
+.contenedor {
+  margin: 1rem;
+  padding: 1rem;
+  /* background-color: var(--bg-primary); */
+}
