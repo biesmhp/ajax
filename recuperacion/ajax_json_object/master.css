@@ -76,3 +76,10 @@ nav input[type="button"]:hover {
   color: var(--text-secondary);
   background-color: var(--bg-terciary);
 }
+.calendario {
+  background-color: var(--bg-terciary);
+}
+.accent {
+  color: var(--color-3);
+  font-weight: bold;
+}
