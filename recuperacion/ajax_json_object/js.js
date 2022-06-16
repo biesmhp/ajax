@@ -31,7 +31,14 @@ function inicio() {
     addInput("date",cajaDatosNode,"inpFecha2")
     addInput("date",cajaDatosNode,"inpFecha3")
     addInput("date",cajaDatosNode,"inpFecha4")
-    addInput("date",cajaDatosNode,"inpFecha5")
+    let boton = addInput("button",cajaDatosNode,"btnFecha","Marcar Fecha")
+    console.log(boton);
+    boton.addEventListener('click',function(e) {
+      let fecha1Node = document.querySelector("#inpFecha1")
+      // console.log(new Date(fecha1Node.value).toLocaleDateString("es-ES"));
+      let fecha2Node = document.querySelector("#inpFecha2")
+      fecha2Node.value = fecha1Node.value
+    },false)
   },false)
 }
 
@@ -97,25 +104,26 @@ function addSelect(arr,objetivo,id) {
     select.appendChild(opcion)
   }
   objetivo.appendChild(select)
-  return objetivo ? true : false
+  return select
 }
 
 // Para añadir un tipo de input
-function addInput(tipo,objetivo,id) {
+function addInput(tipo,objetivo,id,valor) {
   let input = document.querySelector(`#${id}`) ? document.querySelector(`#${id}`) : document.createElement("input")
   while (input.firstChild) {
     input.removeChild(input.lastChild)
   }
-  arguments.length == 3 ? input.setAttribute("id",id) : null
+  arguments.length >= 3 ? input.setAttribute("id",id) : false
   input.setAttribute("type",tipo)
   input.setAttribute("class",`input${tipo.trim().replace(/^\w/, (c) => c.toUpperCase())}`)
+  arguments.length == 4 ? input.setAttribute("value",valor) : false
   switch (true) {
     case tipo=="number":
       input.setAttribute("min",0)
-      input.setAttribute("value",0)
+      // input.setAttribute("value",0)
     break;
     case tipo=="button":
-      input.setAttribute("value","boton")
+      // input.setAttribute("value","boton")
     break;
     case tipo=="text":
       input.setAttribute("placeholder","Introduce texto")
@@ -126,7 +134,7 @@ function addInput(tipo,objetivo,id) {
       input.setAttribute("placeholder","Introduce texto")
   }
   objetivo.appendChild(input)
-  return objetivo ? true : false
+  return input
 }
 
 class Articulo {

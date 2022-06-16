@@ -53,7 +53,7 @@ li {
   margin: 1rem 0 1rem 0;
   overflow: scroll;
 }
-input[type="button"] {
+nav input[type="button"] {
   background-color: inherit;
   color: inherit;
   font: inherit;
@@ -63,7 +63,7 @@ input[type="button"] {
   margin: 0.5rem 0 0.5rem 0;
   overflow: inherit;
 }
-input[type="button"]:hover {
+nav input[type="button"]:hover {
   background-color: var(--color-1);
   color: #FFF;
 }
